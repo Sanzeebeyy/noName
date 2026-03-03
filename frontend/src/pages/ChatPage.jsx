@@ -21,7 +21,7 @@ export default function ChatPage() {
         // Fetch existing messages
         const fetchMessages = async () => {
             try {
-                const res = await fetch('http://127.0.0.1:8000/chat/messages', {
+                const res = await fetch('https://noname-jfn7.onrender.com/chat/messages', {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }
@@ -45,7 +45,7 @@ export default function ChatPage() {
         fetchMessages();
 
         // Connect to WebSockets
-        const wsUrl = `ws://127.0.0.1:8000/ws/?token=${token}`;
+        const wsUrl = `wss://noname-jfn7.onrender.com/ws/?token=${token}`;
         ws.current = new WebSocket(wsUrl);
 
         ws.current.onopen = () => {
