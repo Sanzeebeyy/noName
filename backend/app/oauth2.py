@@ -1,0 +1,11 @@
+from fastapi import Depends, HTTPException, status
+from fastapi.security import OAuth2PasswordBearer
+from . import token
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl='login')
+def get_current_user(token_oauth2:str = Depends(oauth2_scheme)):
+    credentials_exception = HTTPException(
+        status_code=401, detail="Unauthorized"
+    )
+
+    return token.verify_access_token(token_oauth2,credentials_exception)

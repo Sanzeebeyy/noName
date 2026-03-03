@@ -1,0 +1,7 @@
+fastapi[standard]
+bcrypt==3.2.2
+python-jose
+passlib
+websockets
+pydantic
+sqlalchemy

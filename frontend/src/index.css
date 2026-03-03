@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-black: #000000;
+  --color-white: #ffffff;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  margin: 0;
+  padding: 0;
+}
