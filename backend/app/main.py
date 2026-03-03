@@ -25,3 +25,7 @@ app.include_router(ws_chat.router)
 def start_app():
     return "App is Live"
 
+@app.get('/health')
+def health():
+    return {"details":"The App Is Running"}
+
