@@ -8,15 +8,15 @@ Users can register, log in, and send messages in a single global chat room. Mess
 
 ## Features
 
-* 🔐 User registration & login (JWT authentication)
-* 💬 Single global chat room
-* 👀 Anyone can view messages
-* ✍️ Only authenticated users can send messages
-* ⏳ 60-minute message persistence
-* 🚫 Screenshot disabled on frontend (client-side)
-* 🔄 WebSocket real-time updates
-* ❤️ Health check endpoint for uptime monitoring
-* 🚀 Deployed on Render
+* User registration & login (JWT authentication)
+* Single global chat room
+* Anyone can view messages
+* Only authenticated users can send messages
+* 60-minute message persistence
+* Screenshot disabled on frontend (client-side)
+* WebSocket real-time updates
+* Health check endpoint for uptime monitoring
+* Deployed on Render
 
 ---
 
