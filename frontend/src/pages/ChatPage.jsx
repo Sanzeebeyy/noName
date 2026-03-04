@@ -174,7 +174,7 @@ export default function ChatPage() {
                                 </div>
                                 {/* Tooltip Popup */}
                                 <div className="absolute left-0 top-6 scale-0 group-hover:scale-100 group-active:scale-100 transition-transform origin-top-left bg-white text-black text-[10px] py-1 px-2 rounded font-bold whitespace-nowrap z-60 shadow-xl">
-                                    CHAT DELETES AFTER 24H
+                                    CHAT DELETES AFTER 6H
                                 </div>
                             </div>
                         </div>
@@ -192,7 +192,7 @@ export default function ChatPage() {
                         className="flex items-center gap-2 text-xs md:text-sm font-medium px-3 py-1.5 md:px-4 md:py-2 border border-white/20 rounded-md hover:bg-white hover:text-black transition-colors shrink-0 whitespace-nowrap cursor-pointer"
                     >
                         <LogOut className="w-3 h-3 md:w-4 md:h-4" />
-                        <span className="hidden sm:inline">Disconnect</span>
+                        <span className="hidden sm:inline">Leave</span>
                     </button>
                 </div>
             </header>
