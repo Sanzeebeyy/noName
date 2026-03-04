@@ -16,10 +16,12 @@ router = APIRouter(
 def show_messages(db:Session = Depends(get_db),
                   current_user: schemas.User = Depends(get_current_user)):
     
-    one_hour_ago = datetime.utcnow() - timedelta(minutes=60)
+    cutoff = datetime.utcnow() - timedelta(hours=24)
     
+    db.query(models.Message).filter(models.Message.created_at < cutoff).delete()
+    db.commit()
 
-    messages = db.query(models.Message).filter(models.Message.created_at >= one_hour_ago).order_by(models.Message.created_at.asc()).all()
+    messages = db.query(models.Message).order_by(models.Message.created_at.asc()).all()
 
     
     return messages
