@@ -93,33 +93,49 @@ export default function ChatPage() {
     return (
         <div className="flex flex-col h-dvh w-full max-w-full overflow-hidden bg-black text-white font-sans tracking-tight">
             {/* Header */}
-            <header className="shrink-0 w-full bg-black border-b border-white/10 px-4 md:px-6 py-3 md:py-4 flex items-center justify-between z-50">
-                <div className="flex items-center gap-2 md:gap-3">
-                    <div className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full border border-white border-dashed animate-spin-slow shrink-0">
-                        {/* <ShieldAlert className="w-4 h-4 md:w-5 md:h-5 text-white" /> */}
-                        <img src='/rage.svg' className="w-4 h-4 md:w-5 md:h-5 text-white" />
+<header className="shrink-0 w-full bg-black border-b border-white/10 px-4 md:px-6 py-3 md:py-4 flex items-center justify-between z-50 relative">
+    <div className="flex items-center gap-2 md:gap-3 flex-1">
+        <div className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full border border-white border-dashed animate-spin-slow shrink-0">
+            <img src='/rage.svg' className="w-4 h-4 md:w-5 md:h-5 text-white" alt="logo" />
+        </div>
+        
+        <div className="min-w-0">
+            <h1 className="font-bold text-lg md:text-xl tracking-tighter truncate">Say Anything</h1>
+            <div className="flex items-center gap-2 group relative">
+                <span className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full shrink-0 ${isConnected ? 'bg-green-500' : 'bg-red-500'}`}></span>
+                <span className="text-[10px] md:text-xs text-gray-400 font-medium truncate">
+                    {isConnected ? 'Connection Secured' : 'Disconnected'}
+                </span>
+                
+                {/* Mobile Info Icon + Tooltip */}
+                <div className="lg:hidden flex items-center">
+                    <div className="w-3 h-3 border border-gray-500 rounded-full flex items-center justify-center text-[8px] text-gray-400 font-bold cursor-help">
+                        i
                     </div>
-                    <div className="min-w-0">
-                        <h1 className="font-bold text-lg md:text-xl tracking-tighter truncate">Say Anything You Want</h1>
-                        <div className="flex items-center gap-1 md:gap-2">
-                            <span className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full shrink-0 ${isConnected ? 'bg-green-500' : 'bg-red-500'}`}></span>
-                            <span className="text-[10px] md:text-xs text-gray-400 font-medium truncate">
-                                {isConnected ? 'Connection Secured' : 'Disconnected'}
-                            </span>
-                        </div>
+                    {/* Tooltip Popup */}
+                    <div className="absolute left-0 top-6 scale-0 group-hover:scale-100 group-active:scale-100 transition-transform origin-top-left bg-white text-black text-[10px] py-1 px-2 rounded font-bold whitespace-nowrap z-60 shadow-xl">
+                        CHATS DELETE AFTER 24H
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
 
-                
+    {/* Desktop Centered Text */}
+    <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-[0.2em] text-white/40 font-semibold pointer-events-none">
+        Chats vanish after 24h
+    </div>
 
-                <button
-                    onClick={logout}
-                    className="flex items-center gap-2 text-xs md:text-sm font-medium px-3 py-1.5 md:px-4 md:py-2 border border-white/20 rounded-md hover:bg-white hover:text-black transition-colors shrink-0 whitespace-nowrap cursor-pointer"
-                >
-                    <LogOut className="w-3 h-3 md:w-4 md:h-4" />
-                    <span className="hidden sm:inline">Disconnect</span>
-                </button>
-            </header>
+    <div className="flex items-center justify-end flex-1">
+        <button
+            onClick={logout}
+            className="flex items-center gap-2 text-xs md:text-sm font-medium px-3 py-1.5 md:px-4 md:py-2 border border-white/20 rounded-md hover:bg-white hover:text-black transition-colors shrink-0 whitespace-nowrap cursor-pointer"
+        >
+            <LogOut className="w-3 h-3 md:w-4 md:h-4" />
+            <span className="hidden sm:inline">Disconnect</span>
+        </button>
+    </div>
+</header>
 
             {/* Chat Messages */}
             <main className="flex-1 overflow-y-auto overflow-x-hidden w-full p-4 md:p-8 flex flex-col gap-4 md:gap-6 custom-scrollbar">
