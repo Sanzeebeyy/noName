@@ -10,8 +10,12 @@ class ConnectionManager:
         self.active_connection.append(websocket)
 
     def disconnect(self, websocket:WebSocket):
-        self.active_connection.remove(websocket)
+        if websocket in self.active_connection:
+            self.active_connection.remove(websocket)
 
     async def broadcast(self, message:dict):
-        for connection in self.active_connection:
-            await connection.send_json(message)
+        for connection in self.active_connection.copy():
+            try:
+                await connection.send_json(message)
+            except Exception:
+                self.disconnect(connection)

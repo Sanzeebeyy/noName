@@ -114,7 +114,7 @@ export default function ChatPage() {
                     </div>
                     {/* Tooltip Popup */}
                     <div className="absolute left-0 top-6 scale-0 group-hover:scale-100 group-active:scale-100 transition-transform origin-top-left bg-white text-black text-[10px] py-1 px-2 rounded font-bold whitespace-nowrap z-60 shadow-xl">
-                        CHATS DELETE AFTER 24H
+                        CHAT DELETES AFTER 24H
                     </div>
                 </div>
             </div>
@@ -123,7 +123,7 @@ export default function ChatPage() {
 
     {/* Desktop Centered Text */}
     <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-[0.2em] text-white/40 font-semibold pointer-events-none">
-        Chats vanish after 24h
+        CHAT DELETES AFTER 6H
     </div>
 
     <div className="flex items-center justify-end flex-1">
@@ -171,7 +171,7 @@ export default function ChatPage() {
                         value={inputMessage}
                         onChange={(e) => setInputMessage(e.target.value)}
                         className="flex-1 bg-transparent border border-white/20 rounded-full px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors text-base"
-                        placeholder="say your confessions, rants, or discuss anything..."
+                        placeholder="Discuss something..."
                         disabled={!isConnected}
                         autoComplete="off"
                     />

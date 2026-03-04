@@ -16,7 +16,7 @@ router = APIRouter(
 def show_messages(db:Session = Depends(get_db),
                   current_user: schemas.User = Depends(get_current_user)):
     
-    cutoff = datetime.utcnow() - timedelta(hours=24)
+    cutoff = datetime.utcnow() - timedelta(hours=6)
     
     db.query(models.Message).filter(models.Message.created_at < cutoff).delete()
     db.commit()
