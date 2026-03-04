@@ -171,7 +171,7 @@ export default function ChatPage() {
                         value={inputMessage}
                         onChange={(e) => setInputMessage(e.target.value)}
                         className="flex-1 bg-transparent border border-white/20 rounded-full px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors text-base"
-                        placeholder="say your confessions, rants, or suggestions..."
+                        placeholder="say your confessions, rants, or discuss anything..."
                         disabled={!isConnected}
                         autoComplete="off"
                     />
