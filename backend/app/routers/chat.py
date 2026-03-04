@@ -42,7 +42,7 @@ async def upload_image(file:UploadFile = File(...)):
             raise HTTPException(status_code=400, detail="Image Upload Failed")
         
         return {
-            "image_url":data["data"]["url"]
+            "img_url":data["data"]["url"]
         }
 
 

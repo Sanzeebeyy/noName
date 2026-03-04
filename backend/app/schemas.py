@@ -27,7 +27,7 @@ class UpdateUser(BaseModel):
 class ShowMessages(BaseModel):
     sender_id:int
     message_text: str | None = None
-    image_url: str | None = None
+    img_url: str | None = None
     sender: ShowUser
 
     class Config():

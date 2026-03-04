@@ -36,7 +36,7 @@ export default function ChatPage() {
                         sender_id: m.sender_id,
                         username: m.sender.username,
                         message_text: m.message_text,
-                        image_url: m.image_url,
+                        img_url: m.img_url,
                     }));
                     setMessages(formatted);
                     requestAnimationFrame(scrollToBottom);
@@ -122,7 +122,7 @@ export default function ChatPage() {
 
                 if (res.ok) {
                     const data = await res.json();
-                    imageUrl = data.image_url;
+                    imageUrl = data.img_url;
                 } else {
                     console.error('Failed to upload image');
                     alert('Failed to upload image');
@@ -140,7 +140,7 @@ export default function ChatPage() {
             message: inputMessage.trim() || null,
         };
         if (imageUrl) {
-            payload.image_url = imageUrl;
+            payload.img_url = imageUrl;
         }
 
         ws.current.send(JSON.stringify(payload));
@@ -212,9 +212,9 @@ export default function ChatPage() {
                                 ? 'bg-white text-black rounded-tr-none'
                                 : 'bg-[#111] border border-white/10 text-white rounded-tl-none'
                                 }`}>
-                                {msg.image_url && (
+                                {msg.img_url && (
                                     <div className="mb-2">
-                                        <img src={msg.image_url} alt="Shared" className="max-w-full max-h-64 md:max-h-80 rounded-xl object-contain bg-black/5" />
+                                        <img src={msg.img_url} alt="Shared" className="max-w-full max-h-64 md:max-h-80 rounded-xl object-contain bg-black/5" />
                                     </div>
                                 )}
                                 {msg.message_text && <div>{msg.message_text}</div>}
