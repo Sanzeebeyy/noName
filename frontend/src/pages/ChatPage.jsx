@@ -96,10 +96,11 @@ export default function ChatPage() {
             <header className="shrink-0 w-full bg-black border-b border-white/10 px-4 md:px-6 py-3 md:py-4 flex items-center justify-between z-50">
                 <div className="flex items-center gap-2 md:gap-3">
                     <div className="flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full border border-white border-dashed animate-spin-slow shrink-0">
-                        <ShieldAlert className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                        {/* <ShieldAlert className="w-4 h-4 md:w-5 md:h-5 text-white" /> */}
+                        <img src='/rage.svg' className="w-4 h-4 md:w-5 md:h-5 text-white" />
                     </div>
                     <div className="min-w-0">
-                        <h1 className="font-bold text-lg md:text-xl tracking-tighter truncate">Secure Room</h1>
+                        <h1 className="font-bold text-lg md:text-xl tracking-tighter truncate">Say Anything You Want</h1>
                         <div className="flex items-center gap-1 md:gap-2">
                             <span className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full shrink-0 ${isConnected ? 'bg-green-500' : 'bg-red-500'}`}></span>
                             <span className="text-[10px] md:text-xs text-gray-400 font-medium truncate">
@@ -108,6 +109,8 @@ export default function ChatPage() {
                         </div>
                     </div>
                 </div>
+
+                
 
                 <button
                     onClick={logout}
@@ -152,7 +155,7 @@ export default function ChatPage() {
                         value={inputMessage}
                         onChange={(e) => setInputMessage(e.target.value)}
                         className="flex-1 bg-transparent border border-white/20 rounded-full px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-colors text-base"
-                        placeholder="Type a secure message..."
+                        placeholder="say your confessions, rants, or suggestions..."
                         disabled={!isConnected}
                         autoComplete="off"
                     />

@@ -7,7 +7,8 @@ export default function LandingPage() {
             {/* Navigation */}
             <nav className="w-full max-w-6xl py-6 px-8 flex justify-between items-center border-b border-white/10">
                 <div className="flex items-center gap-2 font-bold text-2xl tracking-tighter">
-                    <Shield className="w-8 h-8" strokeWidth={2.5} />
+                    {/* <Shield className="w-8 h-8" strokeWidth={2.5} /> */}
+                    <img src="/rage.svg" alt="" className='w-10 h-10' />
                     noName
                 </div>
                 <div className="space-x-6 text-sm font-medium">
@@ -19,10 +20,10 @@ export default function LandingPage() {
             </nav>
 
             {/* Hero Section */}
-            <main className="flex-1 flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto w-full mt-24 mb-24">
+            <main className="flex-1 flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto w-full mt-24 mb-15">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/20 text-xs font-semibold uppercase tracking-widest mb-8">
                     <Lock className="w-3 h-3" />
-                    End-to-End Encrypted
+                    Complete Privacy Friendly   
                 </div>
 
                 <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-8 leading-tight">
@@ -42,12 +43,13 @@ export default function LandingPage() {
                     Start Chatting Now
                 </Link>
                 <p className="text-xl md:text-xl text-gray-400 mb-12 max-w-2xl font-light pt-10">
-                    Please donot use your own or anyone else's name as your username <br /> This app is made for maintaining full privacy, <br /> Please Do Not !
+                    Request From Developer : <br />
+                    Please Donot Use Your Or Someone Else's Real Name As Username For This App
                 </p>
             </main>
 
             {/* Features */}
-            <section className="w-full bg-black border-t border-white/10 py-24 px-8">
+            <section className="w-full bg-black border-t border-white/10 pb-24 pt-20 px-8">
                 <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-12">
                     <div className="flex flex-col gap-4">
                         <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center">
@@ -55,7 +57,7 @@ export default function LandingPage() {
                         </div>
                         <h3 className="text-xl font-bold">Absolute Security</h3>
                         <p className="text-gray-400 font-light text-sm leading-relaxed">
-                            Military-grade encryption ensures your messages stay between you and the recipient.
+                            Auto chat delete after 24 hours from database and anonimity lets you allow say anything without hesitation.
                         </p>
                     </div>
                     <div className="flex flex-col gap-4">
@@ -81,7 +83,7 @@ export default function LandingPage() {
 
             {/* Footer */}
             <footer className="w-full py-8 text-center border-t border-white/10 text-gray-500 text-sm">
-                &copy; {new Date().getFullYear()} noName. All rights reserved.
+                &copy; {new Date().getFullYear()} . noName . all rights reserved . built by Sanzeebeyy in a single night
             </footer>
         </div>
     );

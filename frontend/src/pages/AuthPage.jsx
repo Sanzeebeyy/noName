@@ -40,7 +40,8 @@ export default function AuthPage() {
     return (
         <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-4">
             <Link to="/" className="absolute top-8 left-8 flex items-center gap-2 font-bold text-xl hover:text-gray-300 transition-colors">
-                <Shield className="w-6 h-6" />
+                {/* <Shield className="w-6 h-6" /> */}
+                <img src='/rage.svg' className="w-10 h-10" />
                 noName
             </Link>
 
@@ -107,7 +108,7 @@ export default function AuthPage() {
                             setIsLogin(!isLogin);
                             setError(null);
                         }}
-                        className="text-white font-bold hover:underline"
+                        className="text-white font-bold hover:underline cursor-pointer"
                     >
                         {isLogin ? 'Register now.' : 'Login here.'}
                     </button>
