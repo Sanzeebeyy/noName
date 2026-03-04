@@ -5,3 +5,5 @@ passlib
 websockets
 pydantic
 sqlalchemy
+httpx
+python-multipart

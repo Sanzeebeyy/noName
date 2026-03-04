@@ -25,9 +25,17 @@ async def websocket_chat(websocket:WebSocket,
     try:
         while True:
             data = await websocket.receive_json()
-            message = data["message"]
 
-            new_message = models.Message(sender_id = user.id , message_text = message)
+            message_text = data.get("message")
+            image_url = data.get("image_url")
+
+            if not message_text and not image_url:
+                await websocket.send_json({
+                    "error": "Message cannot be empty"
+                })
+                continue
+
+            new_message = models.Message(sender_id = user.id , message_text = message_text, image_url = image_url)
 
             db.add(new_message)
             db.commit()
@@ -36,8 +44,9 @@ async def websocket_chat(websocket:WebSocket,
             await manager.broadcast({
                 "sender_id": user.id,
                 "username": user.username,
-                "message_text":message,
-                "message_id":new_message.id
+                "message_text":message_text,
+                "message_id":new_message.id,
+                "image_url":image_url
             })
 
     except WebSocketDisconnect:
